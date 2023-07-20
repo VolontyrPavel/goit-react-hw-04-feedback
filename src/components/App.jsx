@@ -10,9 +10,7 @@ export const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const buttonValue = ['good', 'neutral', 'bad'];
-
-  const onLeaveFeedback = option => {
+  const ClickOnBtn = option => {
     switch (option) {
       case 'good':
         setGood(prev => prev + 1);
@@ -37,8 +35,8 @@ export const App = () => {
     <>
       <Section title={'Please leave feetback'}>
         <FeedbackOptions
-          options={buttonValue}
-          onLeaveFeedback={onLeaveFeedback}
+          options={Object.keys({good, neutral, bad})}
+          onLeaveFeedback={ClickOnBtn}
         />
       </Section>
 
